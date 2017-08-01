@@ -1,11 +1,16 @@
 language: cpp
+
 sudo: required
 dist: trusty
+
 compiler:
-- g++
-os:
-- linux
+    - g++
+
 before_install:
-- sudo apt-get update
-- sudo apt-get install libzdb-dev
-script: ./BUILD
+    - sudo apt-get update
+    - sudo apt-get install libzdb-dev cppcheck cloc
+
+script:
+    - ./BUILD
+    - cppcheck --enable=style,performance,portability,warning,information --inconclusive --std=posix -q -v .
+    - cloc .
