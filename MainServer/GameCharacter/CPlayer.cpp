@@ -118,8 +118,8 @@ CItem* CPlayer::FindItem(WORD wIndex, BYTE byOwnership)
 
 	for (ItemMap::iterator it = m_mItem.begin(); it != m_mItem.end(); it++)
 	{
-		bool isOwnership = byOwnership == IFO_ANY ? true : 
-						((it->second->IsState(ITEM_OWN)) && byOwnership == IFO_MUSTOWN ? true : 
+		bool isOwnership = byOwnership == IFO_ANY ? true :
+						((it->second->IsState(ITEM_OWN)) && byOwnership == IFO_MUSTOWN ? true :
 						(!(it->second->IsState(ITEM_OWN)) && byOwnership == IFO_CANTOWN ? true : false));
 
 
@@ -294,15 +294,15 @@ Packet CPlayer::GenerateCreatePacket(bool bHero)
 		byClass |= GAME_HERO;
 
 	packet.byType = S2C_CREATEPLAYER;
-	//char *end = CSocket::WritePacket(packet.data, "dsbdddwIwwwwwwwwbbIssdbdddIIwwwwwwwwwbddb", 
-	char *end = CSocket::WritePacket(packet.data, "dsbdddwIwwwwwwwwbbIssdbdddIIbddb", 
-		m_nID, 
-		m_szName.c_str(), 
-		byClass, 
-		m_nX, 
-		m_nY, 
-		m_nZ, 
-		m_wDir, 
+	//char *end = CSocket::WritePacket(packet.data, "dsbdddwIwwwwwwwwbbIssdbdddIIwwwwwwwwwbddb",
+	char *end = CSocket::WritePacket(packet.data, "dsbdddwIwwwwwwwwbbIssdbdddIIbddb",
+		m_nID,
+		m_szName.c_str(),
+		byClass,
+		m_nX,
+		m_nY,
+		m_nZ,
+		m_wDir,
 		m_n64GState,
 		m_GearIndex[WS_WEAPON],
 		m_GearIndex[WS_SHIELD],
@@ -312,18 +312,18 @@ Packet CPlayer::GenerateCreatePacket(bool bHero)
 		m_GearIndex[WS_GAUNTLET],
 		m_GearIndex[WS_BOOTS],
 		m_GearIndex[WS_COSTUME],//0,//m_GearIndex[WS_PET], // no effect?
-		m_byFace, 
-		m_byHair, 
-		m_n64MState, 
-		m_szGuildClass.c_str(), 
-		m_szGuildName.c_str(), 
-		m_nGID, 
-		m_byFlag, 
-		m_nFlagItem, 
-		m_nHonorGrade, 
-		m_nHonorOption, 
-		m_n64GStateEx, 
-		m_n64MStateEx, 
+		m_byFace,
+		m_byHair,
+		m_n64MState,
+		m_szGuildClass.c_str(),
+		m_szGuildName.c_str(),
+		m_nGID,
+		m_byFlag,
+		m_nFlagItem,
+		m_nHonorGrade,
+		m_nHonorOption,
+		m_n64GStateEx,
+		m_n64MStateEx,
 
 		byUnknownV,
 		nUn2,
@@ -584,7 +584,7 @@ void CPlayer::Process(Packet packet)
 			CSocket::ReadPacket(packet.data, "s", &szMsg);
 
 			ProcessMsg(szMsg);
-			
+
 			break;
 		}
 
@@ -753,7 +753,7 @@ void CPlayer::Process(Packet packet)
 			break;
 		}
 
-		// Add Distance check and cooldown 
+		// Add Distance check and cooldown
 		// Otherwise it's possible to flood server with party requests & spam all players
 		case C2S_ASKPARTY:
 		{
@@ -771,7 +771,7 @@ void CPlayer::Process(Packet packet)
 
 				pTarget->Unlock();
 				Unlock();
-				
+
 				pTarget->m_Access.Release();
 			}
 
@@ -829,7 +829,7 @@ void CPlayer::Process(Packet packet)
 			break;
 		}
 
-		//TODO: Leave Party Message 
+		//TODO: Leave Party Message
 		case C2S_LEAVEPARTY:
 		{
 			LeaveParty();
@@ -948,7 +948,7 @@ void CPlayer::OnLoadPlayer()
 void CPlayer::OnLoadItems(char *p)
 {
 	//printf("CPlayer::OnLoadItems\n");
-	
+
 	BYTE byCount=0;
 	p = CSocket::ReadPacket(p, "b", &byCount);
 
@@ -1003,7 +1003,7 @@ void CPlayer::OnLoadItems(char *p)
 		IntoInven(pItem);
 
 		if (pItem->IsState(ITEM_PUTON)) {
-			if (!pItem->CanUse(this)) 
+			if (!pItem->CanUse(this))
 			{
 				CDBSocket::Write(S2D_PUTOFFITEM, "d", pItem->GetIID());
 				pItem->Lock();
@@ -1035,7 +1035,7 @@ void CPlayer::OnLoadItems(char *p)
 				(WORD)0, // wProtectNum
 				desc.byExplosiveBlow,
 				(BYTE)0, // byCorrectionAddNum
-				(BYTE)0, // 
+				(BYTE)0, //
 				(BYTE)0, // byRemainingSeconds??
 				(BYTE)0, // byRemainingMinutes??
 				(DWORD)0, // byRemainingHours??
@@ -1115,7 +1115,7 @@ void CPlayer::GameRestart()
 	pClient->Lock();
 	pClient->RemovePlayer();
 	pClient->Unlock();
-	
+
 	pClient->m_Access.Release();
 }
 
@@ -1136,7 +1136,6 @@ bool CPlayer::CanMove()
 
 bool CPlayer::CanAttack(CCharacter * pTarget) const
 {
-
 	if (!CCharacter::CanAttack(pTarget) || !IsWState(WS_WEAPON) || m_wAttackSpeed == 0)
 		return false;
 
@@ -1159,7 +1158,7 @@ void CPlayer::OnMove(char byX, char byY, char byZ, char byType)
 	MapInfo mapInfoCur = CMap::GetMapInfo(m_nX, m_nY);
 	MapInfo mapInfoDest = CMap::GetMapInfo(m_nX + byX, m_nY + byY);
 
-	if (!mapInfoCur.equalTile(mapInfoDest)) 
+	if (!mapInfoCur.equalTile(mapInfoDest))
 	{
 		//printf("Player tile changed.\n[%d %d]->[%d %d]\n",
 		//	mapInfoCur.wTileX, mapInfoCur.wTileY,
@@ -1300,7 +1299,7 @@ void CPlayer::ChatCommand(char* szCommand)
 				pParty->m_Access.Release();
 			}
 		}
-	
+
 		pTarget->m_Access.Release();
 	}
 
@@ -1397,7 +1396,7 @@ void CPlayer::ChatCommand(char* szCommand)
 
 		if (token)
 			wIndex = atoi(token);
-		
+
 		for (int i = GetX() - 500; i <= GetX() + 500; i+=50) {
 			for (int j = GetY() - 500; j <= GetY() + 500; j+=50) {
 				CMonster::Summon(wIndex, i, j);
@@ -1407,7 +1406,7 @@ void CPlayer::ChatCommand(char* szCommand)
 
 	else if (!strcmp(token, "/istown")) {
 		printf("---- %d\n", CMap::CheckZone(this, ZT_TOWN));
-	}	
+	}
 	else if (!strcmp(token, "/isfree")) {
 		printf("---- %d\n", CMap::CheckZone(this, ZT_MONSTER));
 	}
@@ -1594,7 +1593,7 @@ void CPlayer::UpdateProperty(BYTE byProperty, __int64 n64Amount)
 
 			m_wCurMP += n64Amount;
 
-			Write(S2C_UPDATEPROPERTY, "bw", P_CURMP, m_wCurMP);			
+			Write(S2C_UPDATEPROPERTY, "bw", P_CURMP, m_wCurMP);
 			break;
 		}
 
@@ -1669,7 +1668,7 @@ void CPlayer::UpdateProperty(BYTE byProperty, __int64 n64Amount)
 			Write(S2C_UPDATEPROPERTY, "bw", P_MINATTACK, GetMinAttack());
 			break;
 		}
-		
+
 		case P_MAXATTACK:
 		{
 			if ((-n64Amount) > m_wMaxAttackAdd)
@@ -1925,7 +1924,7 @@ void CPlayer::InsertItem(WORD wIndex, int nNum, BYTE byLogType, bool bOwn, bool 
 				(WORD)0, // wProtectNum
 				desc.byExplosiveBlow,
 				(BYTE)0, // byCorrectionAddNum
-				(BYTE)0, // 
+				(BYTE)0, //
 				(BYTE)0, // byRemainingSeconds??
 				(BYTE)0, // byRemainingMinutes??
 				(DWORD)0, // byRemainingHours??
@@ -2260,7 +2259,7 @@ void CPlayer::Attack(CCharacter *pTarget)
 		return;
 
 	DWORD dwNow = GetTickCount();
-	
+
 	double fReducePercentage = (double) (dwNow - m_dwLastAttackTime) / (double) m_wAttackSpeed;
 	if (fReducePercentage > 1.f)
 		fReducePercentage = 1.f;
