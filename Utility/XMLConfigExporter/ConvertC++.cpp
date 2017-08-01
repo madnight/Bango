@@ -173,7 +173,7 @@ public:
 
 		for (auto& n: root->children)
 			Parse(n);
-		
+
 	}
 
 	void InitNPCToXML(const char* outputPath)
@@ -194,7 +194,7 @@ public:
 			printf("Cannot open %s. (%s)\n", outputPath, doc.ErrorName());
 			return;
 		}
-		
+
 		XMLElement *pRoot = doc.RootElement();
 		if (!pRoot)
 		{
@@ -276,7 +276,7 @@ public:
 			printf("Cannot open %s. (%s)\n", outputPath, doc.ErrorName());
 			return;
 		}
-		
+
 		XMLElement *pRoot = doc.RootElement();
 		if (!pRoot)
 		{
@@ -424,7 +424,7 @@ public:
 						else if (specname == "teleport") {
 							int val = 0, val2 = 0, val3 = 0;
 							d >> val >> val2 >> val3;
-							
+
 							pSpec->SetAttribute("v1", val);
 							pSpec->SetAttribute("v2", val2);
 							pSpec->SetAttribute("v3", val3);
@@ -508,12 +508,12 @@ public:
 							int val = 0; d >> val;
 							pSpecList->SetAttribute("hth", val);
 						}
-						
+
 						else if (specname == "int") {
 							int val = 0; d >> val;
 							pSpecList->SetAttribute("int", val);
 						}
-						
+
 						else if (specname == "wis") {
 							int val = 0; d >> val;
 							pSpecList->SetAttribute("wis", val);
@@ -559,7 +559,7 @@ public:
 			printf("Cannot open %s. (%s)\n", outputPath, doc.ErrorName());
 			return;
 		}
-		
+
 		XMLElement *pRoot = doc.RootElement();
 		if (!pRoot)
 		{
@@ -639,7 +639,7 @@ public:
 					iss >> n;
 					pEle->SetAttribute("attackspeed", n);
 				}
-		
+
 				else if (name == "defense") {
 					int close, far; close=far= 0; iss >> close>>far;
 					pEle->SetAttribute("closedefense", close);

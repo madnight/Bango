@@ -114,7 +114,7 @@ Node* parse_data(char *data, const char *name)
 			long len = pos-openChildBracket-1;
 
 			memcpy(node, data+start, len);
-			
+
 			// parse node
 			char* node_start = strstr(node, "(");
 			if (node_start)
@@ -122,7 +122,7 @@ Node* parse_data(char *data, const char *name)
 				// cut name
 				char node_name[MAX_NODE_NAME];
 				memset(node_name, 0, MAX_NODE_NAME*sizeof(char));
-				
+
 				memcpy(node_name, data+start, len-strlen(node_start));
 
 				printf("Parsing node name <%s>: [%s]\n", node_name, node+len-strlen(node_start));
@@ -142,7 +142,7 @@ Node* parse_data(char *data, const char *name)
 
 				int j=0;
 				while(j < len && *(node+j) != '"') j++;
-				
+
 				// "String"
 				if (j != len)
 				{
@@ -180,7 +180,7 @@ Node* parse_data(char *data, const char *name)
 
 					//printf("Leaf: int: %s=[%d]\n", leaf->name, leaf->num);
 				}
-				
+
 				if (n->child)
 					push_brother(n->child, leaf);
 				else n->child = leaf;
@@ -226,7 +226,7 @@ short parser_init(const char *filename, Node *root)
 void print_config(Node *n)
 {
 	Node *temp = n;
-	
+
 	while (temp->right != NULL)
 	{
 		print_config(temp->right);
@@ -258,7 +258,7 @@ void initnpc_to_xml(Node *n, const char* outputPath)
 		printf("Cannot open %s. (%s)\n", outputPath, doc.ErrorName());
 		return;
 	}
-	
+
 	XMLElement *pRoot = doc.RootElement();
 	if (!pRoot)
 	{
@@ -339,7 +339,7 @@ void inititem_to_xml(Node *n, const char* outputPath)
 		printf("Cannot open %s. (%s)\n", outputPath, doc.ErrorName());
 		return;
 	}
-	
+
 	XMLElement *pRoot = doc.RootElement();
 	if (!pRoot)
 	{

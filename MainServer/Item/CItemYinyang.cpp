@@ -34,7 +34,7 @@ CItemYinyang::CItemYinyang(ITEMINFO_DESC& desc, CItemInfo* pMacro): CItem(desc, 
 
 		case ISC_TRIGRAM5:
 			m_byWearType = WS_TRIGRAM5;
-			break; 
+			break;
 
 		case ISC_TRIGRAM6:
 			m_byWearType = WS_TRIGRAM6;
@@ -77,7 +77,7 @@ void CItemYinyang::PutOn(CPlayer *pPlayer)
 		return;
 	}
 
-	if (!pPlayer->IsAllTrigramState()) 
+	if (!pPlayer->IsAllTrigramState())
 	{
 		printf("Is not all trigram.\n");
 		if (GetSubClass() == ISC_YINYANGMIRROR || GetSubClass() == ISC_TAEGEUK) {
@@ -112,7 +112,7 @@ void CItemYinyang::PutOff(CPlayer *pPlayer)
 		return;
 	}
 
-	if (GetSubClass() >= ISC_TRIGRAM1 && GetSubClass() <= ISC_TRIGRAM8) 
+	if (GetSubClass() >= ISC_TRIGRAM1 && GetSubClass() <= ISC_TRIGRAM8)
 	{
 		if (pPlayer->IsWState(WS_MIRROR) || pPlayer->IsWState(WS_TAEGEUK)) {
 			printf(KRED "Cannot put off trigram, because mirror or taegeuk is on.\n" KNRM);

@@ -44,15 +44,15 @@ public:
 	*/
 	static void UnloadNPC();
 
-	/** 
-		Adds NPC to world NPC list so it can 
+	/**
+		Adds NPC to world NPC list so it can
 		be found by ID or iterated through.
 		\param pNPC NPC to add.
 	*/
 	static void Add(CNPC* pNPC);
 
 	/**
-		Removes NPC from world NPC list so it can 
+		Removes NPC from world NPC list so it can
 		no longer be found by ID or iterated through.
 		\param pNPC NPC to remove.
 	*/

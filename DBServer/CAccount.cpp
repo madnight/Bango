@@ -46,7 +46,7 @@ void CAccount::SendPlayerInfo(Connection_T con)
 	memset(&buffer, 0, sizeof(PACKETBUFFER));
 	char* pBegin = (char*)&buffer;
 	char* p = pBegin;
-	
+
 	p = CSocket::WritePacket(p, "b", byCount);
 
 	while (ResultSet_next(r)) {
@@ -67,12 +67,12 @@ void CAccount::SendPlayerInfo(Connection_T con)
 
 		int nGID=0;
 		BYTE byClass = ResultSet_getIntByName(r, "class");
-		p = CSocket::WritePacket(p, "dsbbbdwwwwwbbb", 
+		p = CSocket::WritePacket(p, "dsbbbdwwwwwbbb",
 			ResultSet_getIntByName(r, "idplayer"),
 			ResultSet_getStringByName(r, "name"),
 			byClass, ResultSet_getIntByName(r, "job"), ResultSet_getIntByName(r, "level"), nGID,
 			ResultSet_getIntByName(r, "strength"), ResultSet_getIntByName(r, "health"), ResultSet_getIntByName(r, "inteligence"),
-			ResultSet_getIntByName(r, "wisdom"), ResultSet_getIntByName(r, "dexterity"), ResultSet_getIntByName(r, "face"), 
+			ResultSet_getIntByName(r, "wisdom"), ResultSet_getIntByName(r, "dexterity"), ResultSet_getIntByName(r, "face"),
 			ResultSet_getIntByName(r, "hair"), byWearAmount);
 
 		while (ResultSet_next(items))

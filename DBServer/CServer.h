@@ -14,7 +14,7 @@ class CServer
 public:
 	static AccountMap g_mAccount;
 	static std::mutex g_mxAccount;
-	
+
 	static void Add(CAccount* pAccount);
 	static void Remove(CAccount* pAccount);
 

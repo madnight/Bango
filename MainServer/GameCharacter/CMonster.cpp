@@ -99,10 +99,10 @@ CMonster* CMonster::Summon(WORD wIndex, int nX, int nY)
 	Packet createPacket = pMonster->GenerateCreatePacket(true);
 	pMonster->SendPacketInSight(createPacket);
 
-	printf("MaxHP: %d Attack %d~%d Lv: %d\n", 
-		pMonster->GetMaxHP(), 
-		pMonster->GetMinAttack(), 
-		pMonster->GetMaxAttack(), 
+	printf("MaxHP: %d Attack %d~%d Lv: %d\n",
+		pMonster->GetMaxHP(),
+		pMonster->GetMinAttack(),
+		pMonster->GetMaxAttack(),
 		pMonster->GetLevel());
 
 	return pMonster;
@@ -115,7 +115,7 @@ Packet CMonster::GenerateCreatePacket(bool bHero)
 
 	packet.byType = S2C_CREATEMONSTER;
 
-	char *end = CSocket::WritePacket(packet.data, "wdddwddIIsbdsIIb", 
+	char *end = CSocket::WritePacket(packet.data, "wdddwddIIsbdsIIb",
 		GetIndex(),
 		GetID(),
 		GetX(),
@@ -132,7 +132,7 @@ Packet CMonster::GenerateCreatePacket(bool bHero)
 		GetGStateEx(),
 		GetMStateEx(),
 		GetLevel() //level
-		); 
+		);
 
 	packet.wSize = end - ((char*)&packet);
 
@@ -519,7 +519,7 @@ void CMonster::Move(char byX, char byY, BYTE byType)
 	MapInfo mapInfoCur = CMap::GetMapInfo(m_nX, m_nY);
 	MapInfo mapInfoDest = CMap::GetMapInfo(m_nX + byX, m_nY + byY);
 
-	if (!mapInfoCur.equalTile(mapInfoDest)) 
+	if (!mapInfoCur.equalTile(mapInfoDest))
 	{
 		CMap::Remove(mapInfoCur, this);
 		CMap::Add(mapInfoDest, this);
@@ -615,7 +615,7 @@ void CMonster::Damage(CCharacter * pAttacker, DWORD & dwDamage, BYTE & byType)
 {
 	byType = ATF_HIT;
 
-	if (GetTarget() == NULL) 
+	if (GetTarget() == NULL)
 	{
 		pAttacker->m_Access.Grant();
 		SetTarget((CPlayer *)pAttacker);

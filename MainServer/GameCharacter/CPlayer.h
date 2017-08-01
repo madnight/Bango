@@ -22,7 +22,7 @@ class CPlayer: public CCharacter
 
 	int m_nAID;
 	int m_nPID;
-	WORD m_wPUPoint, 
+	WORD m_wPUPoint,
 		 m_wSUPoint;
 	WORD m_wContribute;
 	int m_nAnger;

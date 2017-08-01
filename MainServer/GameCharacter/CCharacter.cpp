@@ -43,7 +43,7 @@ int CCharacter::NewID()
 	g_mxID.lock();
 
 	int nID = g_nID++;
-	
+
 	g_mxID.unlock();
 
 	return nID;

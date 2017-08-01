@@ -37,8 +37,8 @@ protected:
 	DWORD	m_nCurHP;
 	WORD	m_wCurMP;
 
-	int m_nX, 
-		m_nY, 
+	int m_nX,
+		m_nY,
 		m_nZ;
 
 	BYTE m_byClass;

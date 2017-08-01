@@ -21,7 +21,7 @@ bool CZone::Load()
 
 	std::ifstream ksm(buf, std::ios::binary);
 
-	if (!ksm) 
+	if (!ksm)
 		return false;
 
 	ksm.seekg(0, std::ios::end);

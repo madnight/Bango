@@ -80,7 +80,7 @@ void CParty::AddMember(CPlayer* pPlayer)
 	pPlayer->SetPartyID(m_nID);
 	pPlayer->SetPartyInviterID(0);
 	pPlayer->Unlock();
-	
+
 	m_mxThis.unlock();
 
 	SendPartyInfo();

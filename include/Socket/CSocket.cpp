@@ -135,7 +135,7 @@ char* CSocket::WritePacketFromFile(char* packet, const char* fileName)
 		std::istringstream iss(line);
 
 		char format[2]={0,};
-		
+
 		//if (!(iss >> format[0] >> value)) continue;
 
 		iss >> format[0];

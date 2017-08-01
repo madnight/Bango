@@ -47,7 +47,7 @@ struct CItemInfo: public CMacro
 
 	WORD m_wTeleportID;
 	bool m_bTeleportType;
-	int m_nX, 
+	int m_nX,
 		m_nY;
 		*/
 	int m_nTeleport[3];

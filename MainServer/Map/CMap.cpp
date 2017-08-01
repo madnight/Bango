@@ -130,7 +130,7 @@ CPlayer* CMap::GetClosestNormalPlayer(CCharacter *pCharacter, int nDistance)
 
 	for (PlayerList::iterator it = list.begin(); it != list.end(); it++)
 	{
-		if (!(*it)->IsNormal()) 
+		if (!(*it)->IsNormal())
 		{
 			(*it)->m_Access.Release();
 			continue;
@@ -145,7 +145,7 @@ CPlayer* CMap::GetClosestNormalPlayer(CCharacter *pCharacter, int nDistance)
 			continue;
 		}
 
-		if (pCharacter->GetDistance(*it) < nCurDist) 
+		if (pCharacter->GetDistance(*it) < nCurDist)
 		{
 			pPlayer->m_Access.Release();
 			pPlayer = (*it);
@@ -180,7 +180,7 @@ bool CMap::CheckZone(int nX, int nY, BYTE byType)
 	auto m = GetMapInfo(nX, nY);
 
 	auto pZone = GetZone(m.wZoneX, m.wZoneY);
-	if (!pZone) 
+	if (!pZone)
 		return false;
 
 	return pZone->Check(nX, nY, byType);

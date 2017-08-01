@@ -8,18 +8,18 @@ static __int64 g_nNeedExp[] = {
 		328, 542, 814, 1157, 1588,
 		2250, 3086, 4135, 5444, 7068,
 		9126, 11660, 14769, 18572, 23214,
-		29155, 36409, 45245, 55988, 69026, 
-		85569, 105656, 130009, 159494, 195150, 
-		238225, 290216, 352918, 428488, 519513, 
-		629149, 761081, 919784, 1110624, 1340045, 
-		1615778, 1947099, 2345141, 2823265, 3397501, 
-		4087087, 4915108, 5909267, 7102808, 8535623, 
-		10255633, 12320243, 14798389, 17772795, 21342730, 
-		25627317, 30769501, 36940820, 44347118, 53235407, 
-		63902104, 76702906, 92064653, 110499551, 132622249, 
-		159170373, 191028978, 229260177, 275138508, 330193415, 
+		29155, 36409, 45245, 55988, 69026,
+		85569, 105656, 130009, 159494, 195150,
+		238225, 290216, 352918, 428488, 519513,
+		629149, 761081, 919784, 1110624, 1340045,
+		1615778, 1947099, 2345141, 2823265, 3397501,
+		4087087, 4915108, 5909267, 7102808, 8535623,
+		10255633, 12320243, 14798389, 17772795, 21342730,
+		25627317, 30769501, 36940820, 44347118, 53235407,
+		63902104, 76702906, 92064653, 110499551, 132622249,
+		159170373, 191028978, 229260177, 275138508, 330193415,
 		// ąŮ˛ń
-		396260232,	1188853398,	1426699190,	1712116603,	2054620005, 
+		396260232,	1188853398,	1426699190,	1712116603,	2054620005,
 		2465626643 ,2958837208 ,3550692535 ,4260921625 ,5113199283 ,
 		6135935388 ,7363221560 ,8835967855 ,10603266353 ,12724027540 ,
 		15268944005 ,18322846853 ,21987533410 ,26385160468 ,31662316180 ,
@@ -97,10 +97,10 @@ static int g_nAddOTPLv[] = {
 };
 
 static int g_nHitChance[] = {
-	50, 52, 52, 54, 54, 56, 56, 58, 58, 60, 
-	60, 62, 62, 64, 64, 66, 66, 68, 68, 70, 
-	70, 72, 72, 74, 74, 76, 76, 78, 78, 80, 
-	80, 82, 82, 84, 84, 86, 86, 88, 88, 90, 
+	50, 52, 52, 54, 54, 56, 56, 58, 58, 60,
+	60, 62, 62, 64, 64, 66, 66, 68, 68, 70,
+	70, 72, 72, 74, 74, 76, 76, 78, 78, 80,
+	80, 82, 82, 84, 84, 86, 86, 88, 88, 90,
 	90, 95, 95, 95, 95, 95, 95, 95, 95, 95, 95
 };
 
@@ -330,7 +330,7 @@ static BASEPROPERTY g_baseproperty[] = {
 #define CGS_EVENT_HALLOWEEN_PUMPKIN_3    __int64(0x00010000) << 32	// ÇŇ·ÎŔ© ŔĚşĄĆ®. ČŁąÚ
 #define CGS_EVENT_HALLOWEEN_MIX		(CGS_EVENT_HALLOWEEN_GHOST_1|CGS_EVENT_HALLOWEEN_GHOST_2|CGS_EVENT_HALLOWEEN_GHOST_3|\
 									 CGS_EVENT_HALLOWEEN_WITCH_1|CGS_EVENT_HALLOWEEN_WITCH_2|CGS_EVENT_HALLOWEEN_WITCH_3|\
-									 CGS_EVENT_HALLOWEEN_PUMPKIN_1|CGS_EVENT_HALLOWEEN_PUMPKIN_2|CGS_EVENT_HALLOWEEN_PUMPKIN_3)	 
+									 CGS_EVENT_HALLOWEEN_PUMPKIN_1|CGS_EVENT_HALLOWEEN_PUMPKIN_2|CGS_EVENT_HALLOWEEN_PUMPKIN_3)
 
 #define CGS_BATTLEFIELD_RED				__int64(0x00020000) << 32	// ˝ĂłŞ¸®żŔ3 ŔüŔĺ»óĹÂ Č«ĆŔ
 #define CGS_BATTLEFIELD_BLUE			__int64(0x00040000) << 32	// ˝ĂłŞ¸®żŔ3 ŔüŔĺ»óĹÂ Ă»ĆŔ
@@ -392,7 +392,7 @@ static BASEPROPERTY g_baseproperty[] = {
 
 #define CMS_SILENCESHOT     __int64(0x00000400) << 32
 #define CMS_MANABURN        __int64(0x00000800) << 32
-#define CMS_POISONCLOUD     __int64(0x00001000) << 32 
+#define CMS_POISONCLOUD     __int64(0x00001000) << 32
 #define CMS_DESTROYSIGHT    __int64(0x00002000) << 32
 #define CMS_DO_UPABSORB     __int64(0x00004000) << 32
 #define CMS_DO_UPRESISTALL  __int64(0x00008000) << 32
@@ -706,7 +706,7 @@ enum SKILL_ADD_VALUE
 	SAV_DAMAGEWIDEOVERRUN,		//ľî¸Ł˝ĹŔÇşĐłë
 	SAV_DAMAGEWIDEMSWIING1,				//ČÖµÎ¸Ł±â1
 	SAV_DAMAGEWIDEMSWIING2,				//ČÖµÎ¸Ł±â2
-	SAV_DAMAGEWIDEMFURY, 
+	SAV_DAMAGEWIDEMFURY,
 	SAV_DAMAGEWIDEFIREEXPLOSION,		//Č­ż°ĂĘ Ćřąß
 	SAV_DAMAGEWIDESIEGEGUNBALL,			//°řĽşş´±â Ć÷Ĺş Ćřąß
 	SAV_DAMAGEWIDEMVACCUMWAVE,			//Ář°řĆÄ
@@ -761,7 +761,7 @@ enum MLM_FLAG
 // FRD Flag
 enum FRD_FLAG
 {
-	// msg	
+	// msg
 	FRD_MSG_LIMITMAX = 0,   //ŔÎżřÁ¦ÇŃ
 	FRD_MSG_ALREADYINSERT,  //ŔĚąĚ µî·ĎµÇľîŔÖŔ˝
 	FRD_MSG_NOTEXISTPLAYER, //ľř´ÂÇĂ·ąŔĚľî
@@ -774,7 +774,7 @@ enum FRD_FLAG
 	FRD_M_INSERT = 0, //bs
 	FRD_M_DELETE,     //bbd
 	FRD_M_PID,
-	FRD_M_LOAD,	
+	FRD_M_LOAD,
 	FRD_M_REFRESH,    //b
 	// dbsvr
 	FRD_D_INSERT = 0,
@@ -795,8 +795,8 @@ enum MAIL_FLAG
 	MAIL_SR_FAILSCANPLAYER,
 
 	MAIL_SFLAG_NONE = 0,
-	MAIL_SFLAG_READ,	
-	MAIL_SFLAG_SENDPROC,	
+	MAIL_SFLAG_READ,
+	MAIL_SFLAG_SENDPROC,
 	MAIL_SFLAG_ITEMRECVPROC,
 
 	MAIL_SF_SUCCESS = 0,
@@ -811,32 +811,32 @@ enum MAIL_FLAG
 	// msg
 	MAIL_MSG_NEWMAIL = 0,
 	MAIL_MSG_RETURN,          //d MID
-	MAIL_MSG_DELETE,          //d 
-	MAIL_MSG_SENDPROC,        // 
-	MAIL_MSG_ITEMRECVPROC,    //d 
+	MAIL_MSG_DELETE,          //d
+	MAIL_MSG_SENDPROC,        //
+	MAIL_MSG_ITEMRECVPROC,    //d
 	MAIL_MSG_ALREADYRETURN,   //d
 	MAIL_MSG_NOTENOUGHMONEY,  //d
 	MAIL_MSG_ITEMRECVSUCCESS, //d
 	MAIL_MSG_ITEMRECVNOSLOT,  //d
 	MAIL_MSG_ITEMATSTALL,  //d
 
-	// Type	
+	// Type
 	MAIL_T_GENERAL = 0,
 	MAIL_T_PARCEL,
 	MAIL_T_RETURN,
-	MAIL_T_PAY,	
+	MAIL_T_PAY,
 	MAIL_T_NOTICE,
 	// client
 	MAIL_C_SEND_RESULT = 0, //bs
-	MAIL_C_LIST,            //b dbbbdsdsdddwbdd     
+	MAIL_C_LIST,            //b dbbbdsdsdddwbdd
 	MAIL_C_MSG,	            //dbdwm or dbdwmwbbdbbbbbbbbbbb
 	MAIL_C_UPDATEINFO,      //dbb
 	// mainsvr
 	MAIL_M_SEND = 0,        //c2s bswm bswmdwbdd
 	MAIL_M_SEND_RESULT,	    //d2s
 	MAIL_M_REFRESH,         //c2s
-	MAIL_M_LOAD,            //d2s    
-	MAIL_M_RETURNPROC,      //d2s	
+	MAIL_M_LOAD,            //d2s
+	MAIL_M_RETURNPROC,      //d2s
 	MAIL_M_CHECK_RESULT,    //d2s
 	MAIL_M_GETMSG,          //c2s d
 	MAIL_M_SETMSG,          //d2s
@@ -868,7 +868,7 @@ enum EVENT_FLAG
 	EF_INVALIDPLAYER,		// ŔĚąĚ ĂßĂµ µÇľî ŔÖ˝Ŕ´Ď´Ů.		<- ŔĚąĚ ĂßĂµ µÇľî ŔÖŔ»¶§ ş¸ł» °Ú˝Ŕ´Ď´Ů.
 	EF_NOTNEWACCOUNT,		// ´ç˝ĹŔş ˝Ĺ±Ô °čÁ¤ŔĚ ľĆ´Ő´Ď´Ů.
 	EF_SAMEACCOUNT,			// ŔÚ±â ŔÚ˝ĹŔş ĂßĂµÇŇ Ľö ľř˝Ŕ´Ď´Ů.
-	EF_SUCCESS_SPONSOREVENT, //ÇŘ´ç °čÁ¤ŔĚ Á¤»óŔűŔ¸·Î ĂßĂµµÇľú˝Ŕ´Ď´Ů. 
+	EF_SUCCESS_SPONSOREVENT, //ÇŘ´ç °čÁ¤ŔĚ Á¤»óŔűŔ¸·Î ĂßĂµµÇľú˝Ŕ´Ď´Ů.
 	EF_OVERLEVEL10,
 	EF_UNDERLEVEL16,
 	EF_OVERPUPIL20,
@@ -886,14 +886,14 @@ enum EVENT_FLAG
 	EF_UNDERLEVEL10,
 	EF_DEFICIENT_DICECOIN,
 	EF_SUCCESS_DICEEVENT,
-	EF_UNDERLEVEL20,			// ·ąş§ŔĚ 20ŔĚ»óŔĚÁö ľĘŔ»¶§. 
+	EF_UNDERLEVEL20,			// ·ąş§ŔĚ 20ŔĚ»óŔĚÁö ľĘŔ»¶§.
 	EF_UNDERLEVEL30,			// ·ąş§ŔĚ 30ŔĚ»óŔĚÁö ľĘŔ»¶§.
 	EF_UNDERLEVEL40,			// ĂßĂµŔÚ°ˇ ·ąş§ 40ŔĚ»óŔĚÁö ľĘŔ»‹š.
 	EF_NOEVENTUSER,	// ŔĚşĄĆ® Ŕűżë ´ë»óŔĚ ľĆ´Ň¶§
 	EF_ITEMRECEIVE,	// ľĆŔĚĹŰ ŔĚąĚ ąŢŔ˝
 	EF_LIMITCOUNT,  // Ľ±ÂřĽř Áöł˛
 	EF_NOTPLAY,		// ÇĂ·ąŔĚÁßŔĚ ľĆ´Ő´Ď´Ů.		<- Ăß°ˇ
-	
+
 	// event bit
 	EB_SPONSOR = 1,
 	EB_MLM_MASTER = 2,
@@ -917,7 +917,7 @@ enum EVENT_FLAG
 	EB_NEW_LV20_5	= 0x00000800,	// ˝Ĺ±Ô - LV20´ŢĽş-ąćľî±¸4
 	EB_NEW_LV20_6	= 0x00001000,	// ˝Ĺ±Ô - LV20´ŢĽş-ąćľî±¸5
 
-	
+
 
 };
 
@@ -974,13 +974,13 @@ enum EVENT_CODE
 	EVENT_THXGIVING,
 	EVENT_ANNUAL,		// »óżëČ­ 1ÁÖłâ
 	EVENT_NEWSERVER,	// ˝Ĺ Ľ­ąö żŔÇÂ
-	EVENT_FISHING,		// ł¬˝ĂżŐ ŔĚşĄĆ®...	ĂëĽŇµĘ. 
+	EVENT_FISHING,		// ł¬˝ĂżŐ ŔĚşĄĆ®...	ĂëĽŇµĘ.
 	EVENT_CRAFTSMAN,	// Á¦ŔŰŔÇ °íĽö ŔĚşĄĆ®
 	EVENT_POWERUP,		//	°ř°Ý·Â ľ÷.
 	EVENT_EXPUP,		//	°ćÇčÄˇ ľ÷.
 	EVENT_NAMCHEON,		// ł˛ĂµĂË ż­¸Ĺ ŔĚşĄĆ®
-	EVENT_SNOWFALL,		// ´« ł»¸®±â ŔĚşĄĆ® (ĂµÇĎĹ¸Ľł) 
-	EVENT_CHRISTMAS,	// Ĺ©¸®˝ş¸¶˝ş ŔĚşĄĆ® 16 
+	EVENT_SNOWFALL,		// ´« ł»¸®±â ŔĚşĄĆ® (ĂµÇĎĹ¸Ľł)
+	EVENT_CHRISTMAS,	// Ĺ©¸®˝ş¸¶˝ş ŔĚşĄĆ® 16
 	EVENT_NEWACCOUNT,	// ŔŻŔú ĂßĂµ ŔĚşĄĆ®		17
 	EVENT_SLEEPINGACCOUNT, // ČŢ¸é °čÁ¤ şą±Í ŔĚşĄĆ®	18
 
@@ -1003,7 +1003,7 @@ enum EventMora
 	MORA_LEVEL_LIMIT,	//	°ˇŔ§ąŮŔ§ş¸ şŇ°ˇ´ÉÇŃ ·ąş§.
 };
 
-// ł˛ĂµĂË ż­¸Ĺ ŔĚşĄĆ® 
+// ł˛ĂµĂË ż­¸Ĺ ŔĚşĄĆ®
 enum EventNamCheon
 {
 	NAMCHEON_REFRESH,	// ¸ń·Ď °»˝Ĺ
@@ -1122,7 +1122,7 @@ enum WEAR_STATE
 	WS_RESISTNECKLACE2,
 
 	WS_TRANSFORM,
-	
+
 	WS_MASK,
 	WS_2HANDWEAPON,
 	WS_STANDARD,
@@ -1250,7 +1250,7 @@ enum AdminType
 	A_BLOCKED,
 	A_RESERVED1,
 	A_ADMIN,	// Ĺ×˝şĆ®żë
-	A_GM,	// Game Master	
+	A_GM,	// Game Master
 	A_SUPERADMIN,	// °łąßŔÚ
 	A_GM2,			// żîżµŔÚ 2
 	A_SUPERADMIN2,	// °łąßŔÚ 2
@@ -1372,7 +1372,7 @@ enum TYTE_LOG					// A : Auth   D : DB
 	TL_TRADE,			// 10	// D ľĆŔĚĹŰ °Ĺ·ˇ
 	TL_DROP,					// D ľĆŔĚĹŰ ¶ł±¸±â
 	TL_PICKUP,					// D ľĆŔĚĹŰ ÁÝ±â
-	TL_PERMIT,					// A 
+	TL_PERMIT,					// A
 	TL_SKILLUP,					// D ˝şĹł·ąş§ ľ÷
 	TL_STORAGE,					// D Ă˘°í
 	TL_QUEST,					// D Äů˝şĆ®
@@ -1388,36 +1388,36 @@ enum TYTE_LOG					// A : Auth   D : DB
 	TL_TRADEBYSTALL,			// D ÁÂĆÇ
 	TL_CHANGEPREFIX,			// D Á˘µÎ»ç şÎŔű°˘ŔÎ
 	TL_UPDATE_CHEAT,
-	TL_EXPLEVEL,				// D 
-	TL_SKILLREDISTRIBUTE,// 30	// D 
+	TL_EXPLEVEL,				// D
+	TL_SKILLREDISTRIBUTE,// 30	// D
 	TL_GUILD,					// D ±ćµĺ°ü·Ă şńżë
-	TL_GUILD_EXP,				// D 
-	TL_ALLIANCE_CREATE,			// D 
-	TL_ALLIANCE_JOIN,			// D 
-	TL_ALLIANCE_DELETE,			// D 
-	TL_ALLIANCE_POSTPONE,		// D 
-	TL_CASTLEWAR_ADD,			// D 
-	TL_CASTLEWAR_END,			// D 
-	TL_BLESS,					// D 
+	TL_GUILD_EXP,				// D
+	TL_ALLIANCE_CREATE,			// D
+	TL_ALLIANCE_JOIN,			// D
+	TL_ALLIANCE_DELETE,			// D
+	TL_ALLIANCE_POSTPONE,		// D
+	TL_CASTLEWAR_ADD,			// D
+	TL_CASTLEWAR_END,			// D
+	TL_BLESS,					// D
 	TL_FORCEDIN,		// 40	// D »çÁ¦·Î ľňŔş ŔÚ¸đŔü
-	TL_MLM,						// D 
+	TL_MLM,						// D
 	TL_BUYFORCEDIN,				// D ľĆŔĚĹŰ ŔĺĹÍŔĚżë
 	TL_USEPAYITEM,				// D ŔŻ·áľĆŔĚĹŰ »çżë
 	TL_UPDATEITEMINFO,			// D ż¬¸¶Á¦ »çżë
 	TL_UPGRADE_DESTROY,			// D ş¸Á¤Ľ® ĂßĂâ
-	TL_UPGRADE_RATE,			// D 
+	TL_UPGRADE_RATE,			// D
 	TL_UPGRADE_LEVEL,			// D Âü°Ý
 	TL_MAIL_SEND,				// D ÂĘÁö ş¸łż
 	TL_MAIL_POSTAGEL,			// D ĽŇĆ÷ş¸łľ ¶§ żä±ÝąŢ´Â °Í
 	TL_MAIL_ITEMSEND,	// 50	// D ĽŇĆ÷(ľĆŔĚĹŰ µżşŔ)
 	TL_MAIL_ITEMRECV,			// D ĽŇĆ÷(ľĆŔĚĹŰ ąŢ±â)
-	TL_CHANGEFACE,				// D 
+	TL_CHANGEFACE,				// D
 	TL_MOVEITEM,				// SQL ŔúŔĺÇÁ·Î˝ĂÁ® (EXEC MoveItem PID, IID)
 								// GETDATE(), nMainType=15, nType=53, nID1=PID, nID2=0, nIID= IID, nVal1=0, nVal2=0, nVal3=0, nVal4=0
 	TL_HACKING,
 	TL_BATTLEFIELD,				// ŔüŔĺ°ü·Ă
-	TL_COPYPLAYER,				// Ĺ×Ľ· ÇĂ·ąŔĚľî şą»ç 
-	TL_COPYPLAYERITEM,				// Ĺ×Ľ· ÇĂ·ąŔĚľî şą»ç·Î ľĆŔĚĹŰ »ýĽş 
+	TL_COPYPLAYER,				// Ĺ×Ľ· ÇĂ·ąŔĚľî şą»ç
+	TL_COPYPLAYERITEM,				// Ĺ×Ľ· ÇĂ·ąŔĚľî şą»ç·Î ľĆŔĚĹŰ »ýĽş
 	TL_CHANGEUSER,				// SQL ŔúŔĺÇÁ·Î˝ĂÁ® (EXEC MoveItem PID, IID)
 	TL_CHANGESERVER,				// SQL ŔúŔĺÇÁ·Î˝ĂÁ® (EXEC MoveItem PID, IID)
 
@@ -1462,7 +1462,7 @@ enum PROPERTY_TYPE
 	P_HASTE,
 	P_RAGE,
 	P_MORTAL,
-	P_HOST,	
+	P_HOST,
 	P_RANGE,
 	P_MIX,
 	P_CURHPR,		// 40
@@ -1598,25 +1598,25 @@ enum MESSAGE_TYPE
 	MGS_DOOROPEN,	//***(ą®ŔĚ¸§)°ˇ ż­¸ł´Ď´Ů.	//"w" NPC ID
 	MGS_DOORCLOSE,	//***(ą®ŔĚ¸§)°ˇ ´ÝČü´Ď´Ů.	//"w" NPC ID
 	//MSG_SIEGEGUN					//°řĽş ş´±â °ü·Ă ¸ŢĽĽÁö
-	MSG_SIEGEGUNSETCANCEL,			//ĽłÄˇ°ˇ ĂëĽŇ µÇľú˝Ŕ´Ď´Ů. 
-	MSG_SIEGEGUNIMPOSSIBLE,			//Áö±Ý ĽłÄˇ°ˇ şŇ°ˇ´É ÇŐ´Ď´Ů. 
-	MSG_SIEGEGUNUSED,		// 120	//ŔĚąĚ ´Ů¸Ą »ç¶÷ŔĚ ĽłÄˇ ÁßŔÔ´Ď´Ů. 
+	MSG_SIEGEGUNSETCANCEL,			//ĽłÄˇ°ˇ ĂëĽŇ µÇľú˝Ŕ´Ď´Ů.
+	MSG_SIEGEGUNIMPOSSIBLE,			//Áö±Ý ĽłÄˇ°ˇ şŇ°ˇ´É ÇŐ´Ď´Ů.
+	MSG_SIEGEGUNUSED,		// 120	//ŔĚąĚ ´Ů¸Ą »ç¶÷ŔĚ ĽłÄˇ ÁßŔÔ´Ď´Ů.
 	MSG_SIEGEGUNUNSETUSED,			//ŔĚąĚ ´Ů¸Ą »ç¶÷ŔĚ ÇŘĂĽ ÁßŔÔ´Ď´Ů.
-	MSG_SIEGEGUNSETCLASS,			//şÎŔÇ 1µî±Ţ¸¸ ĽłÄˇ°ˇ °ˇ´ÉÇŐ´Ď´Ů. 
-	MSG_SIEGEGUNCONDITION,			//Ŕç·á°ˇ şÎÁ·ÇŐ´Ď´Ů. 
+	MSG_SIEGEGUNSETCLASS,			//şÎŔÇ 1µî±Ţ¸¸ ĽłÄˇ°ˇ °ˇ´ÉÇŐ´Ď´Ů.
+	MSG_SIEGEGUNCONDITION,			//Ŕç·á°ˇ şÎÁ·ÇŐ´Ď´Ů.
 
-	MSG_SIEGEGUNDIFFERNT,			//´Ů¸Ą şÎŔÇ °řĽş ş´±âŔÔ´Ď´Ů. 
-	MSG_SIEGEGUNHANDLING,			//ŔĚąĚ ´Ů¸Ą »ç¶÷ŔĚ Á¶Áľ ÁßŔÔ´Ď´Ů. 
-	
-	MSG_SIEGEGUNREMOVECLASS,		//şÎŔÇ 1µî±Ţ ¸¸ ÇŘĂĽ ÇŇĽö ŔÖ˝Ŕ´Ď´Ů. 
-	MSG_SIEGEGUNREMOVEHANDLING,		//´Ů¸Ą »ç¶÷ŔĚ Á¶Áľ ÁßŔĚ¶óĽ­ ÇŘĂĽ ÇŇĽö ľř˝Ŕ´Ď´Ů. 
-	MSG_SIEGEGUNREMOVECANCEL,		//ÇŘĂĽ°ˇ ĂëĽŇ µÇľú˝Ŕ´Ď´Ů. 
+	MSG_SIEGEGUNDIFFERNT,			//´Ů¸Ą şÎŔÇ °řĽş ş´±âŔÔ´Ď´Ů.
+	MSG_SIEGEGUNHANDLING,			//ŔĚąĚ ´Ů¸Ą »ç¶÷ŔĚ Á¶Áľ ÁßŔÔ´Ď´Ů.
+
+	MSG_SIEGEGUNREMOVECLASS,		//şÎŔÇ 1µî±Ţ ¸¸ ÇŘĂĽ ÇŇĽö ŔÖ˝Ŕ´Ď´Ů.
+	MSG_SIEGEGUNREMOVEHANDLING,		//´Ů¸Ą »ç¶÷ŔĚ Á¶Áľ ÁßŔĚ¶óĽ­ ÇŘĂĽ ÇŇĽö ľř˝Ŕ´Ď´Ů.
+	MSG_SIEGEGUNREMOVECANCEL,		//ÇŘĂĽ°ˇ ĂëĽŇ µÇľú˝Ŕ´Ď´Ů.
 
 	MSG_SIEGEGUNSET,				//ŔĚąĚ °řĽş ş´±â°ˇ ĽłÄˇµÇľî ŔÖ˝Ŕ´Ď´Ů
 	MSG_SIEGEGUNNOSKILL,			//°řĽş ş´±â Á¶Áľ ˝şĹłŔĚ ÇĘżäÇŐ´Ď´Ů.
 	//130
 	MSG_SIEGEGUNGUILD,				//´Ů¸Ą °÷żˇ ŔĚąĚ "%s"şÎŔÇ °řĽş ş´±â°ˇ Á¸ŔçÇŐ´Ď´Ů.   "s", szGuildName	//130
-	MSG_SIEGEGUNUNSETIMPOSSIBLE,	//Áö±Ý ÇŘĂĽ°ˇ şŇ°ˇ´É ÇŐ´Ď´Ů. 
+	MSG_SIEGEGUNUNSETIMPOSSIBLE,	//Áö±Ý ÇŘĂĽ°ˇ şŇ°ˇ´É ÇŐ´Ď´Ů.
 	MSG_SIEGEGUNNOTGUILD,			//´Ů¸ĄşÎŔÇ ş´±â´Â ÇŘĂĽÇŇ Ľö ľř˝Ŕ´Ď´Ů.
 	MSG_SIEGEGUNNORELATION,			//°řĽşżˇ Âüż©ÇĎ´Â şÎżÍ ±× µż¸ÍşÎ¸¸ ĽłÄˇ°ˇ °ˇ´ÉÇŐ´Ď´Ů.
 	MSG_CANTSIEGEITEMUSE,			// "%s"ľĆŔĚĹŰŔş Áˇ·ÉŔüŔĚ ˝ĂŔŰµÇľîľß »çżëŔĚ °ˇ´ÉÇŐ´Ď´Ů.
@@ -1637,23 +1637,23 @@ enum MESSAGE_TYPE
 	MSG_NOPARTYWITHENEMY,			// ŔüŔĺ Âüż©ÁßŔĎ¶§żˇ´Â »ó´ëĆí°ú ĆÄĆĽ°ˇ şŇ°ˇ´É ÇŐ´Ď´Ů.
 	//150
 	MSG_EVENT_SNOWFALL, // ĂµÇĎĹ¸Ľł ŔĚşĄĆ® ĽöÁ¤ŔĚ 1000°ł ¸đľĆÁ® ´«ŔĚł»¸±¶§
-	MSG_ADDBSTATEX,					// 
+	MSG_ADDBSTATEX,					//
 	MSG_HONORPOINT,			//"ds" ÁˇĽö, Äł¸ŻŔĚ¸§
 	MSG_BEFOREWARREMAINSEC,			// "bd"	b:ŔüŔĺÁľ·ů (1:°ĹÁˇĆÄ±« 2:±şÁÖş¸ČŁ..) d:ł˛Ŕş ĂĘ
 
 	MSG_PRAYUSED,		// ±âżřŔÇ»ó : ´Ů¸Ą ÇĂ·ąŔĚľî°ˇ ŔĚąĚ Äł˝şĆĂ Áß.
 	MSG_PRAYOPEN,		// ±âżřŔÇ»ó : Äł˝şĆĂ Áß.
 	MSG_PRAYOPENED,		// ±âżřŔÇ»ó : Äł˝şĆĂ żĎ·á.
-	MSG_PRAYCANCELED,	// ±âżřŔÇ»ó : Äł˝şĆĂ ĂëĽŇ 
+	MSG_PRAYCANCELED,	// ±âżřŔÇ»ó : Äł˝şĆĂ ĂëĽŇ
 	MSG_PRAYALREADY,    // ±âżřŔÇ»ó : »ó´ëĆŔŔĚ ŔĚąĚ ±âżř »óĹÂ.
 	MSG_PRAYSTATENOTUSE, // ±âżř»óĹÂ ľĆŔĚĹŰ »çżë X
-	MSG_REVIVALITEMNOTUSE, // ±şÁÖ°ˇ şÎČ° ľĆŔĚĹŰŔ» »çżëÇĎ·Á ÇŇ¶§. 
+	MSG_REVIVALITEMNOTUSE, // ±şÁÖ°ˇ şÎČ° ľĆŔĚĹŰŔ» »çżëÇĎ·Á ÇŇ¶§.
 	MSG_REVIVALSKILLNOTUSE,	// şÎČ° ˝şĹł »çżë˝Ă ´ë»óŔĚ ±şÁÖş¸ČŁżˇ Âüż©ÁßŔÎ ±şÁÖ ŔĎ¶§.
 };
 
 // ±ćµĺżř µî±Ţ.
-enum GUILD_MEMBER_CLASS { 
-	GUILD_LEADER = 1, 
+enum GUILD_MEMBER_CLASS {
+	GUILD_LEADER = 1,
 	GUILD_SUBLEADER,
 	GUILD_CENTURION,
 	GUILD_TEN,
@@ -1843,8 +1843,8 @@ enum PK_MSG
 	PKMSG_PKDIE,                        //bd 1´ç˝ĹŔş ŔÚ°´ XXXżˇ°Ô Á×ŔÓŔ» ´çÇĎż´˝Ŕ´Ď´Ů.
 	PKMSG_OFFPK,                        //b  1´ç˝ĹŔş ŔÚ°´ »óĹÂ¸¦ ÇŘÁ¦ÇĎż´˝Ŕ´Ď´Ů.
 	PKMSG_ONPKKILL,                     //bd 1´ç˝ĹŔş ŔÚ°´ XXX ¸¦ Ă´»ěÇĎż© ±×¸íĽşŔ» ł˛°ĺ˝Ŕ´Ď´Ů. ´ç˝ĹŔÇ °řÇĺŔş ąćżˇ °ř°í µË´Ď´Ů.
-	PKMSG_LIMIT_OFFPKTICK,              //b  1ŔÚ°´ »óĹÂ´Â Ľ±ľđ ČÄ 1˝Ă°Ł, Č¤Ŕş ¸¶Á÷¸· °ř°Ý ČÄ 180ĂĘ µżľČ »óĹÂşŻ°ćŔ» ÇŇĽö ľř˝Ŕ´Ď´Ů.	
-	PKMSG_LIMIT_TRADESELF,              //b  1ŔÚ°´ »óĹÂżˇĽ­´Â ´Ů¸Ą »ç¶÷żˇ°Ô °Ĺ·ˇ¸¦ ˝ĹĂ»ÇŇ Ľö ľř˝Ŕ´Ď´Ů. ¸ŐŔú ŔÚ°´ »óĹÂ¸¦ ÇŘÁ¦ÇŘľß ÇŐ´Ď´Ů. 
+	PKMSG_LIMIT_OFFPKTICK,              //b  1ŔÚ°´ »óĹÂ´Â Ľ±ľđ ČÄ 1˝Ă°Ł, Č¤Ŕş ¸¶Á÷¸· °ř°Ý ČÄ 180ĂĘ µżľČ »óĹÂşŻ°ćŔ» ÇŇĽö ľř˝Ŕ´Ď´Ů.
+	PKMSG_LIMIT_TRADESELF,              //b  1ŔÚ°´ »óĹÂżˇĽ­´Â ´Ů¸Ą »ç¶÷żˇ°Ô °Ĺ·ˇ¸¦ ˝ĹĂ»ÇŇ Ľö ľř˝Ŕ´Ď´Ů. ¸ŐŔú ŔÚ°´ »óĹÂ¸¦ ÇŘÁ¦ÇŘľß ÇŐ´Ď´Ů.
 	PKMSG_LIMIT_TRADEOTHER,             //b  1ŔÚ°´ »óĹÂŔÇ ´ë»óżˇ°Ô´Â °Ĺ·ˇ°ˇ şŇ°ˇ´ÉÇŐ´Ď´Ů.
 };
 

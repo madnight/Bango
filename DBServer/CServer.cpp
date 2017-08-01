@@ -68,7 +68,7 @@ void CServer::EmptyAccount()
 
 	for (auto& a: g_mAccount)
 		delete a.second;
-	
+
 	g_mAccount.clear();
 
 	g_mxAccount.unlock();

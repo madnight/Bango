@@ -122,7 +122,7 @@ void CMainSocket::Accept()
 
 			// Cut buffer into packets
 			char *p = (char*)&buffer;
-			while (nLen > 0 && nLen >= *(WORD*)p) 
+			while (nLen > 0 && nLen >= *(WORD*)p)
 			{
 				/*
 				Packet *packet = new Packet;
@@ -278,7 +278,7 @@ void CMainSocket::Process(Packet& packet)
 			char *szNewPassword=NULL;
 
 			CSocket::ReadPacket(packet.data, "dss", &nClientID, &szOldPassword, &szNewPassword);
-			
+
 			printf("ClientID: %d, OldPassword: %s, NewPassword: %s\n", nClientID, szOldPassword, szNewPassword);
 
 			CAccount *pAccount = CServer::FindAccount(nClientID);
@@ -316,7 +316,7 @@ void CMainSocket::Process(Packet& packet)
 			char *szPassword=NULL;
 
 			CSocket::ReadPacket(packet.data, "ds", &nClientID, &szPassword);
-			
+
 			printf("ClientID: %d, SecondaryPW: %s\n", nClientID, szPassword);
 
 			CAccount *pAccount = CServer::FindAccount(nClientID);
@@ -360,7 +360,7 @@ void CMainSocket::Process(Packet& packet)
 			CAccount *pAccount = CServer::FindAccount(nClientID);
 			if (!pAccount) break;
 
-			PreparedStatement_T p = Connection_prepareStatement(con, 
+			PreparedStatement_T p = Connection_prepareStatement(con,
 				"UPDATE player SET deleted=1 WHERE idaccount=? AND idplayer=?");
 
 			PreparedStatement_setInt(p, 1, pAccount->GetAID());
@@ -393,7 +393,7 @@ void CMainSocket::Process(Packet& packet)
 
 			CSocket::ReadPacket(p, "sbwwwwwbb", &szName, &byJob, &wStats[0], &wStats[1], &wStats[2], &wStats[3], &wStats[4], &byShape[0], &byShape[1]);
 
-			PreparedStatement_T ps = Connection_prepareStatement(con, 
+			PreparedStatement_T ps = Connection_prepareStatement(con,
 				"SELECT "
 				"EXISTS(SELECT 1 FROM player WHERE name=?) as bIsDuplicate, "
 				"(SELECT COUNT(*) FROM player WHERE idaccount=? AND deleted=0) as byCount");
@@ -416,7 +416,7 @@ void CMainSocket::Process(Packet& packet)
 				break;
 			}
 
-			ps = Connection_prepareStatement(con, 
+			ps = Connection_prepareStatement(con,
 				"INSERT INTO player (idaccount, name, class, strength, health, inteligence, wisdom, dexterity, curhp, curmp, face, hair) "
 				" VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
 
@@ -474,33 +474,33 @@ void CMainSocket::Process(Packet& packet)
 			char* p = pBegin;
 
 			p = CSocket::WritePacket(p, "dbddsbbbwwwwwdwIwwwddddbb", nClientID, byMessage,
-				ResultSet_getIntByName(resultPlayer, "idaccount"), 
-				nPID, 
+				ResultSet_getIntByName(resultPlayer, "idaccount"),
+				nPID,
 				ResultSet_getStringByName(resultPlayer, "name"),
-				ResultSet_getIntByName(resultPlayer, "class"), 
-				ResultSet_getIntByName(resultPlayer, "job"), 
+				ResultSet_getIntByName(resultPlayer, "class"),
+				ResultSet_getIntByName(resultPlayer, "job"),
 				ResultSet_getIntByName(resultPlayer, "level"),
-				ResultSet_getIntByName(resultPlayer, "strength"), 
-				ResultSet_getIntByName(resultPlayer, "health"), 
-				ResultSet_getIntByName(resultPlayer, "inteligence"), 
-				ResultSet_getIntByName(resultPlayer, "wisdom"), 
+				ResultSet_getIntByName(resultPlayer, "strength"),
+				ResultSet_getIntByName(resultPlayer, "health"),
+				ResultSet_getIntByName(resultPlayer, "inteligence"),
+				ResultSet_getIntByName(resultPlayer, "wisdom"),
 				ResultSet_getIntByName(resultPlayer, "dexterity"),
-				ResultSet_getIntByName(resultPlayer, "curhp"), 
-				ResultSet_getIntByName(resultPlayer, "curmp"), 
-				ResultSet_getLLongByName(resultPlayer, "exp"), 
-				ResultSet_getIntByName(resultPlayer, "pupoint"), 
-				ResultSet_getIntByName(resultPlayer, "supoint"), 
-				ResultSet_getIntByName(resultPlayer, "contribute"), 
+				ResultSet_getIntByName(resultPlayer, "curhp"),
+				ResultSet_getIntByName(resultPlayer, "curmp"),
+				ResultSet_getLLongByName(resultPlayer, "exp"),
+				ResultSet_getIntByName(resultPlayer, "pupoint"),
+				ResultSet_getIntByName(resultPlayer, "supoint"),
+				ResultSet_getIntByName(resultPlayer, "contribute"),
 				ResultSet_getIntByName(resultPlayer, "anger"),
-				ResultSet_getIntByName(resultPlayer, "x"), 
-				ResultSet_getIntByName(resultPlayer, "y"), 
+				ResultSet_getIntByName(resultPlayer, "x"),
+				ResultSet_getIntByName(resultPlayer, "y"),
 				ResultSet_getIntByName(resultPlayer, "z"),
 				ResultSet_getIntByName(resultPlayer, "face"),
 				ResultSet_getIntByName(resultPlayer, "hair"));
 
-			PreparedStatement_T preparedItemlist = Connection_prepareStatement(con, 
+			PreparedStatement_T preparedItemlist = Connection_prepareStatement(con,
 				"SELECT * FROM item WHERE idplayer=?");
-			PreparedStatement_T preparedItemCount = Connection_prepareStatement(con, 
+			PreparedStatement_T preparedItemCount = Connection_prepareStatement(con,
 				"SELECT COUNT(*) FROM item WHERE idplayer=?");
 
 			PreparedStatement_setInt(preparedItemlist, 1, nPID);
@@ -564,7 +564,7 @@ void CMainSocket::Process(Packet& packet)
 			pAccount->m_Access.Release();
 			break;
 		}
-		
+
 		case S2D_SELECT_CHARACTER:
 		{
 			printf("S2D_SELECT_CHARACTER.\n");
@@ -612,13 +612,13 @@ void CMainSocket::Process(Packet& packet)
 		{
 			printf("S2D_MAX_IID.\n");
 
-			ResultSet_T r = Connection_executeQuery(con, 
+			ResultSet_T r = Connection_executeQuery(con,
 				"SELECT COALESCE(MAX(iditem), -2147483648) AS max_id FROM item");
 
 			ResultSet_next(r);
 
 			int nMaxIID = ResultSet_getInt(r, 1);
-			
+
 			CMainSocket::Write(D2S_MAX_IID, "d", nMaxIID);
 
 			break;
@@ -758,7 +758,7 @@ void CMainSocket::Process(Packet& packet)
 
 			CSocket::ReadPacket(packet.data, "dbdddwdwIwwd", &nPID, &byLevel, &nX, &nY, &nZ, &wContribute, &nCurHP, &wCurMP, &n64Exp, &wPUPoint, &wSUPoint, &nAnger);
 
-			PreparedStatement_T p = Connection_prepareStatement(con, 
+			PreparedStatement_T p = Connection_prepareStatement(con,
 				"UPDATE player SET level=?, x=?, y=?, z=?, contribute=?, curhp=?, curmp=?, exp=?, pupoint=?, supoint=?, anger=? WHERE idplayer=?");
 
 			PreparedStatement_setInt(p, 1, byLevel);
@@ -788,7 +788,7 @@ void CMainSocket::Process(Packet& packet)
 			int nIID=0;
 			CSocket::ReadPacket(packet.data, "d", &nIID);
 
-			PreparedStatement_T p = Connection_prepareStatement(con, 
+			PreparedStatement_T p = Connection_prepareStatement(con,
 				"DELETE FROM item WHERE iditem=?");
 
 			PreparedStatement_setInt(p, 1, nIID);
@@ -805,7 +805,7 @@ void CMainSocket::Process(Packet& packet)
 			int nIID=0;
 			CSocket::ReadPacket(packet.data, "d", &nIID);
 
-			PreparedStatement_T p = Connection_prepareStatement(con, 
+			PreparedStatement_T p = Connection_prepareStatement(con,
 				"UPDATE item SET info = info | 1 WHERE iditem=?");
 
 			PreparedStatement_setInt(p, 1, nIID);
@@ -822,7 +822,7 @@ void CMainSocket::Process(Packet& packet)
 			int nIID=0;
 			CSocket::ReadPacket(packet.data, "d", &nIID);
 
-			PreparedStatement_T p = Connection_prepareStatement(con, 
+			PreparedStatement_T p = Connection_prepareStatement(con,
 				"UPDATE item SET info = info & ~1 WHERE iditem=?");
 
 			PreparedStatement_setInt(p, 1, nIID);
@@ -841,7 +841,7 @@ void CMainSocket::Process(Packet& packet)
 			int nPID=0;
 			char *p = CSocket::ReadPacket(packet.data, "ddb", &nCID, &nPID, &byType);
 
-			if (byType == 0) 
+			if (byType == 0)
 			{
 				PreparedStatement_T ps = Connection_prepareStatement(con,
 					"SELECT value FROM shortcut WHERE idplayer=? ORDER BY idslot ASC");

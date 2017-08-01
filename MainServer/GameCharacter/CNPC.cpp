@@ -30,10 +30,10 @@ Packet CNPC::GenerateCreatePacket(bool bHero)
 	memset(&packet, 0, sizeof(Packet));
 
 	DWORD dwFlagItem=0;
-	
+
 	packet.byType = S2C_CREATENPC;
 
-	char *end = CSocket::WritePacket(packet.data, "dwbdddwId", 
+	char *end = CSocket::WritePacket(packet.data, "dwbdddwId",
 		m_nID, m_wIndex, m_nShape, m_nX, m_nY, m_nZ, m_wDir, m_n64GState, dwFlagItem);
 
 	packet.wSize = end - ((char*)&packet);

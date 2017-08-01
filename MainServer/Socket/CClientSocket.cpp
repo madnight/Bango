@@ -42,7 +42,7 @@ bool CClientSocket::Start(WORD wPort)
     sigemptyset(&sigIntHandler.sa_mask);
     sigIntHandler.sa_flags = 0;
     sigaction(SIGINT, &sigIntHandler, NULL);
- 
+
 	return true;
 }
 
@@ -98,7 +98,7 @@ void CClientSocket::Accept()
 
 		pthread_t t;
 
-		if (pthread_create(&t, NULL, &CClientSocket::Await, (PVOID)client) != THREAD_SUCCESS) 
+		if (pthread_create(&t, NULL, &CClientSocket::Await, (PVOID)client) != THREAD_SUCCESS)
 		{
 			printf(KRED "ERROR: Couldn't start thread.\n" KNRM);
 			delete client;
@@ -137,7 +137,7 @@ PVOID CClientSocket::Await(PVOID param)
 
 		// Cut buffer into packets
 		char *p = (char*)&buffer;
-		while (nLen > 0 && nLen >= *(WORD*)p) 
+		while (nLen > 0 && nLen >= *(WORD*)p)
 		{
 			Packet packet;
 			memset(&packet, 0, sizeof(Packet));

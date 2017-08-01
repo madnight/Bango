@@ -13,25 +13,25 @@ private:
 public:
 	Access(): m_nAccess(0) {}
 
-	bool IsBusy() 
+	bool IsBusy()
 	{
-		if (m_nAccess > 0) 
+		if (m_nAccess > 0)
 			return true;
 		return false;
 	}
 
-	void Grant() 
-	{ 
-		++m_nAccess; 
+	void Grant()
+	{
+		++m_nAccess;
 	}
 
-	void Release() 
+	void Release()
 	{
 		if (!IsBusy()) {
 			printf(KRED "Trying to release non busy Access.\n" KNRM);
 			return;
 		}
-		
+
 		--m_nAccess;
 	}
 };

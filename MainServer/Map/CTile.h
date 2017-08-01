@@ -89,7 +89,7 @@ public:
 		\param deletePacket Pre-generated disappear packet for distribution.
 		\param movePacket Pre-generated move packet for distribution.
 	*/
-	void SendMoveAction(CCharacter *pCharacter, char byX, char byY, 
+	void SendMoveAction(CCharacter *pCharacter, char byX, char byY,
 		Packet& createPacket, Packet& petPacket, Packet& deletePacket, Packet& movePacket);
 
 	/**

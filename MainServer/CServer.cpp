@@ -59,7 +59,7 @@ bool CServer::Start()
 {
 	pthread_t t;
 
-	if (pthread_create(&t, NULL, &CServer::Timer, NULL) != THREAD_SUCCESS) 
+	if (pthread_create(&t, NULL, &CServer::Timer, NULL) != THREAD_SUCCESS)
 	{
 		printf(KRED "ERROR: Couldn't start thread.\n" KNRM);
 		return false;
@@ -78,7 +78,7 @@ PVOID CServer::Timer(PVOID)
 
 		DWORD dwNow = GetTickCount();
 
-		if (dwNow - dwTickTime >= 1000) 
+		if (dwNow - dwTickTime >= 1000)
 		{
 			CPlayer::TickAll();
 			CMonster::TickAll();

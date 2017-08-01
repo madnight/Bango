@@ -48,7 +48,7 @@ public:
 
 	static CTile* GetTile(int nTileX, int nTileY);
 	static CZone* GetZone(int nZoneX, int nZoneY);
-	static MapInfo GetMapInfo(int nX, int nY); 
+	static MapInfo GetMapInfo(int nX, int nY);
 
 	static bool CheckZone(int nX, int nY, BYTE byType);
 	static bool CheckZone(CCharacter *pCharacter, BYTE byType);

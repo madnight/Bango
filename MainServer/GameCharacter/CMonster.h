@@ -32,7 +32,7 @@ class CMonster: public CCharacter, public ITimer
 public:
 	CMonster(CMonsterInfo *pMacro, int nX, int nY);
 	~CMonster();
-	
+
 	static CMonster* CreateMonster(WORD wIndex, int nX, int nY);
 
 	static CMonster* Summon(WORD wIndex, int nX, int nY);
@@ -93,7 +93,7 @@ public:
 	void Attack(CPlayer *pTarget);
 	bool Chase();
 	void Damage(CCharacter *pAttacker, DWORD& dwDamage, BYTE& byType) override;
-	
+
 	// Timer
 	void ScanSight();
 	void OnWalk();

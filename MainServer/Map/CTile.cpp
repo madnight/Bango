@@ -69,7 +69,7 @@ void CTile::GetCharacterListAround(CCharacter *pCharacter, int nDistance, Charac
 
 		if (pCharacter->GetDistance(pTarget) <= nDistance)
 			list.push_back(pTarget);
-		else 
+		else
 			pTarget->m_Access.Release();
 	}
 
@@ -79,7 +79,7 @@ void CTile::GetCharacterListAround(CCharacter *pCharacter, int nDistance, Charac
 
 		if (pCharacter->GetDistance(pTarget) <= nDistance)
 			list.push_back(pTarget);
-		else 
+		else
 			pTarget->m_Access.Release();
 	}
 
@@ -106,7 +106,7 @@ void CTile::GetPlayerListAround(CCharacter *pCharacter, int nDistance, PlayerLis
 
 		if (pCharacter->GetDistance(pTarget) <= nDistance)
 			list.push_back(pTarget);
-		else 
+		else
 			pTarget->m_Access.Release();
 	}
 
@@ -123,7 +123,7 @@ void CTile::GetMonsterListAround(CCharacter *pCharacter, int nDistance, MonsterL
 
 		if (pCharacter->GetDistance(pTarget) <= nDistance)
 			list.push_back(pTarget);
-		else 
+		else
 			pTarget->m_Access.Release();
 	}
 
@@ -253,7 +253,7 @@ void CTile::SendMoveAction(CCharacter * pCharacter, char byX, char byY, Packet &
 	Unlock();
 }
 
-void CTile::ExchangeMoveActionWithPlayers(CCharacter * pCharacter, char byX, char byY, 
+void CTile::ExchangeMoveActionWithPlayers(CCharacter * pCharacter, char byX, char byY,
 	Packet & createPacket, Packet & petPacket, Packet & deletePacket, Packet & movePacket)
 {
 	for (auto& a : m_mPlayer) {

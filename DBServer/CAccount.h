@@ -22,7 +22,7 @@ class CAccount
 	std::string m_szSecondary;
 
 public:
-	CAccount(int nClientID, int nAccountID, std::string szLogin, std::string szPassword, std::string szSecondary): 
+	CAccount(int nClientID, int nAccountID, std::string szLogin, std::string szPassword, std::string szSecondary):
 		m_nClientID(nClientID), m_nAccountID(nAccountID), m_szLogin(szLogin), m_szPassword(szPassword), m_szSecondary(szSecondary),
 		m_Access()
 		{ }
