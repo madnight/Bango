@@ -468,24 +468,24 @@ WORD CPlayer::GetDefense(BYTE byType) const
 
 DWORD CPlayer::GetMaxHP() const
 {
-	return ((GetLevel() >= 96 ? 195 :
+	return (
+		(GetLevel() >= 96 ? 195 :
 		(GetLevel() >= 91 ? 141.8147 :
 		(GetLevel() >= 86 ? 111.426 :
-			(GetLevel() >= 81 ? 91.758 :
-			(GetLevel() >= 76 ? 78 :
-				(GetLevel() >= 72 ? 67.8162 :
-					52)))))) * GetLevel() / 3) + 115 + 2 * GetHth() * GetHth() / g_denoHP[m_byClass] + m_dwMaxHPAdd;
+		(GetLevel() >= 81 ? 91.758 :
+		(GetLevel() >= 76 ? 78 :
+		(GetLevel() >= 72 ? 67.8162 : 52)))))) * GetLevel() / 3) + 115 + 2 * GetHth() * GetHth() / g_denoHP[m_byClass] + m_dwMaxHPAdd;
 }
 
 WORD CPlayer::GetMaxMP() const
 {
-	return ((GetLevel() >= 96 ? 20 :
+	return (
+		(GetLevel() >= 96 ? 20 :
 		(GetLevel() >= 91 ? 18 :
 		(GetLevel() >= 86 ? 16 :
-			(GetLevel() >= 81 ? 14 :
-			(GetLevel() >= 76 ? 12 :
-				(GetLevel() >= 72 ? 10 :
-					8)))))) * GetLevel()) + 140 + GetWis() + 2 * GetWis() * GetWis() / g_denoMP[m_byClass] + m_wMaxMPAdd;
+		(GetLevel() >= 81 ? 14 :
+		(GetLevel() >= 76 ? 12 :
+		(GetLevel() >= 72 ? 10 : 8)))))) * GetLevel()) + 140 + GetWis() + 2 * GetWis() * GetWis() / g_denoMP[m_byClass] + m_wMaxMPAdd;
 }
 
 WORD CPlayer::GetMinAttack() const
@@ -1136,13 +1136,8 @@ bool CPlayer::CanMove()
 
 bool CPlayer::CanAttack(CCharacter * pTarget) const
 {
-	if (!CCharacter::CanAttack(pTarget))
-		return false;
 
-	if (!IsWState(WS_WEAPON))
-		return false;
-
-	if (m_wAttackSpeed == 0)
+	if (!CCharacter::CanAttack(pTarget) || !IsWState(WS_WEAPON) || m_wAttackSpeed == 0)
 		return false;
 
 	int nDistance = GetDistance(pTarget);// -GetSize() - pTarget->GetSize();
@@ -1859,6 +1854,7 @@ void CPlayer::OnTeleport(BYTE byAnswer, int nZ)
 	SendPacketInSight(petPacket);
 }
 
+// i think that should actually be CPlayer::InsertItem(CItem *pItem)
 void CPlayer::InsertItem(WORD wIndex, int nNum, BYTE byLogType, bool bOwn, bool bForceSingular, BYTE byPrefix, BYTE byXAttack, BYTE byXMagic, BYTE byXHit, BYTE byEBlow, int nInfo, BYTE byXDodge, BYTE byXDefense, FUSION_DESC* pFuse, BYTE byShot, WORD wPerforation, int nGongLeft, int nGongRight)
 {
 	CItemInfo* pMacro = (CItemInfo*) CMacroDB::FindMacro(CMacro::MT_ITEM, wIndex);
@@ -2307,5 +2303,5 @@ void CPlayer::Attack(CCharacter *pTarget)
 
 bool CPlayer::CheckBlock(CCharacter * pAttacker) const
 {
-	return false; // Not implemented
+	return false; // TODO: Not implemented
 }

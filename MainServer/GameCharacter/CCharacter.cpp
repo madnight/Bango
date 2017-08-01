@@ -91,33 +91,19 @@ WORD CCharacter::GetMagic() const
 
 bool CCharacter::CanAttack(CCharacter * pTarget) const
 {
-	if (!IsNormal())
-		return false;
-
-	if (!pTarget->IsNormal())
-		return false;
-
-	return true;
+	return IsNormal() && pTarget->IsNormal();
 }
 
 bool CCharacter::CheckHit(CCharacter * pTarget, int nAdd) const
 {
-	int nLevelDiff = (int) GetLevel() - (int) pTarget->GetLevel();
-	
-	if (nLevelDiff > 100)
-		nLevelDiff = 100;
-	else if (nLevelDiff < -100)
-		nLevelDiff = -100;
-	
+	auto normalize = [](int i, int normal) -> int { return (i > normal) ? normal : (i < -normal) ? -normal : i;};
+
+	int nLevelDiff = normalize((int) GetLevel() - (int) pTarget->GetLevel(), 100);
+
 	int nLevelOTP = g_nAddOTPLv[abs(nLevelDiff)];
 	nLevelOTP = nLevelDiff < 0 ? -nLevelOTP : nLevelOTP;
 
-	int nTotalHitPoint = GetHit() - pTarget->GetDodge() + nLevelOTP + nAdd;
-
-	if (nTotalHitPoint > 41)
-		nTotalHitPoint = 41;
-	else if (nTotalHitPoint < -41)
-		nTotalHitPoint = -41;
+	int nTotalHitPoint = normalize(GetHit() - pTarget->GetDodge() + nLevelOTP + nAdd, 41);
 
 	int nChance = 0;
 	if (nTotalHitPoint < 0)
